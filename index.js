@@ -9,10 +9,10 @@ const models = require('./models')
 //     bio: "Senang"
 // })
 
-// models.Student.findAll().then(function(tmpData) {
-//     tmpData.forEach(function(item) {
-//         item.name = `${item.first_name} ${item.last_name}`
-//         console.log(item.name);
-//         item.save().then(function(){})
-//     })
-// })
+models.Student.findAll().then(function(tmpData) {
+    tmpData.forEach(function(item) {
+        item.name = `${item.first_name} ${item.last_name}`
+        console.log(item.name);
+        item.save().then(function(){})
+    })
+})
