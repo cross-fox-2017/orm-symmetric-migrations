@@ -18,7 +18,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     instanceMethods: {
       getFullName: function() {
-        return (this.first_name + " " + this.last_name)
+        return (this.name + " " + this.last_name)
       },
       getAge: function(){
         let today = new Date();
