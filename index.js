@@ -3,11 +3,11 @@
 const models = require('./models')
 
 
-models.Student.create({
-    first_name: "23Tedd",
-    last_name: "23DEE",
-    bio: "Senang"
-})
+// models.Student.create({
+//     first_name: "Tedd",
+//     last_name: "DEE",
+//     bio: "Senang"
+// })
 
 // models.Student.findAll().then(function(tmpData) {
 //     tmpData.forEach(function(item) {
