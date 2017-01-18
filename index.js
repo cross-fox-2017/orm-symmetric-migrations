@@ -12,6 +12,6 @@ const db = require('./models');
 
 db.Student.findAll().then(function(students){
   students.forEach(function(students){
-    students.update({name: students.getFullName()})
+    students.update({address: 'JAKARTA'})
   })
 })

@@ -11,7 +11,7 @@ module.exports = {
     */
     return queryInterface.removeColumn(
       'Students',
-      'first_name'
+      'last_name'
     )
   },
 
