@@ -2,18 +2,17 @@
 
 let db = require("./models")
 
+// db.Student.bulkCreate([
+//   {first_name: 'Rubi', last_name: "Henjaya", birthdate: "1986-11-20"},
+//   {first_name: 'Riza', last_name: "Fahmi", birthdate: "1983-12-31"},
+//   {first_name: 'Windi', last_name: "Ana", birthdate: "1987-07-11"}
+// ])
 
-db.Student.bulkCreate([
-  {name: "Rubi Henjaya", address: "Jl. A"},
-  {name: "Riza Fahmi", address: "Jl. B"},
-  {name: "Windi Ana", address: "Jl. C"}
-])
-
-// db.Student.updateName(function (cb) {
-//   cb.forEach(function (data) {
-//     console.log(data.dataValues);
-//   })
-// })
+db.Student.updateName(function (cb) {
+  cb.forEach(function (data) {
+    console.log(data.dataValues);
+  })
+})
 // TODO belajarin lagi cara gabungan getAllData sama updateName
 
 /*
