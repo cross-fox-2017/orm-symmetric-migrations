@@ -1,16 +1,13 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
   var Student = sequelize.define('Student', {
-    firstName: DataTypes.STRING,
-    lastName: DataTypes.STRING,
     birthday: DataTypes.DATE,
     email: {
       type: DataTypes.STRING,
       validate: {isEmail: {args: true, msg: "Email in wrong format"},
       isUniq: function(value, next){
-        Student.findOne({where:{email:value}, attributes: ['id']}).done(function(err,data){
-          if (err){ return next(err)}
-          if (data){ return next({msg: 'Email address already in use!'})}
+        Student.findAll({where:{email:value}, attributes: ['id']}).then(function(data){
+          if (data.length>0){ return next('Email address already in use!')}
             next();
           })
         }
@@ -23,7 +20,8 @@ module.exports = function(sequelize, DataTypes) {
     height: {
       type: DataTypes.INTEGER,
       validate: {min: {args: 150, msg: "Minimal Height Must Above 150"}}
-    }
+    },
+    fullname: DataTypes.STRING
   }, {
     classMethods: {
       associate: function(models) {
@@ -32,7 +30,7 @@ module.exports = function(sequelize, DataTypes) {
       getAllData: function(){
         Student.findAll().then(function(data){
           data.forEach(function(data){
-            console.log(`id: ${data.dataValues.id}\nFullname: "${data.getFullName()}"\nage: ${data.getAge()}\n`);
+            console.log(`id: ${data.dataValues.id}\nFullname: "${data.dataValues.fullname}"\nage: ${data.getAge()}\n`);
           })
         })
       }
