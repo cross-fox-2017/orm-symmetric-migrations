@@ -10,8 +10,19 @@ module.exports = function(sequelize, DataTypes) {
     classMethods: {
       associate: function(models) {
         // associations can be defined here
+      },
+      getAllData: function(cb){
+        this.findAll().then(function(data){
+          cb(data)
+      })
+}
+    },
+    instanceMethods :{
+      getFname: function(){
+        return (`${this.firstname} ${this.lastname}`)
       }
     }
+
   });
   return Student;
 };

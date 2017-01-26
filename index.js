@@ -2,10 +2,10 @@
 
 const db = require('./models')
 
-// db.Student.bulkCreate([{ first_name: 'wawa' ,last_name:'ww',birthdate:'1999-01-20'},
-//                       { first_name: 'wewe' ,last_name:'wa',birthdate:'2000-02-25'},
-//                       { first_name: 'awaw' ,last_name:'we',birthdate:'1998-01-27'},
-//                       { first_name: 'asdsd' ,last_name:'www',birthdate:'1989-01-29'}]).
+// db.Student.bulkCreate([{ firstname: 'wawa' ,lastname:'ww',birthdate:'1999-01-20'},
+//                       { firstname: 'wewe' ,lastname:'wa',birthdate:'2000-02-25'},
+//                       { firstname: 'awaw' ,lastname:'we',birthdate:'1998-01-27'},
+//                       { firstname: 'asdsd' ,lastname:'www',birthdate:'1989-01-29'}]).
 //                       then(function(student){
 //                         console.log(student)
 //                       })
